@@ -102,7 +102,9 @@ And now if all went well you should have a working system that has been migrated
 VIDEOS:
 
 Nvidia Install Video Guide https://youtu.be/kytT_ucujjg
+
 Grub Recovery Guide https://youtu.be/QbZmCo1weLo
+
 **Comming Soon** Leap 42.1 to 15.2
 
 If you liked this please help me buy a cup of tea or some food via Librepay or via Paypal.
@@ -116,3 +118,5 @@ If you liked this please help me buy a cup of tea or some food via Librepay or v
 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
 <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 </form>
+
+https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9D5J99QNAN88W&source=url
