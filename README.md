@@ -1,6 +1,6 @@
-This is suppose to be a guide on how to do an implace upgrade of Opensuse to Opensuse Leap 15.2 with minimal issues.
+This is suppose to be a guide on how to do an in-place upgrade of Opensuse to Opensuse Leap 15.2 with minimal issues.
 
-Tested from 42.1 to 15.2 Beta with minimal issues.  See linked youtube Series.
+Tested from 42.1 to 15.2 Beta with minimal issues.  See linked youtube series in the video section.
 
 
 First back up your repos
@@ -22,7 +22,7 @@ Then we need to change the existing repos to 15.2.
 
 Now we need to refresh the repositories to see if there have been any that had name changes or no longer exist.  This is time consuming but must be done if you have lots of packages from multiple repos.  Quick and easy way is to turn off all but the OSS, Non-OSS, Update and Packman repo (see mentioned video)
 
-sudo zypper --gpg-auto-import-keys ref
+*sudo zypper --gpg-auto-import-keys ref*
 
 Any issues with the above command, make note of the url and open the url in a web browser.  An example of a troublesome one is XFCE having changed it's repo naming scheme in 15.1 verses 15.0 with 15.1 going back to a normal naming scheme.  Some repos also may not be yet built for 15.2 or have been abandoned.  You can manage any of the repo's that need the url changed or need to be deleted using Yast>Software Repositories.  If there is something you need you can make an OpenBuildService account, clone the repo you need and try to build the packages targeting Leap 15.2.
 
@@ -34,15 +34,19 @@ Now once you have all the packages cached it is reccomended you drop into a TTY 
 
 Kill X
 
-sudo init 3
+*sudo init 3*
+
 or
-sudo rcxdm stop
+
+*sudo rcxdm stop*
+
 or 
-sudo systemctl isolate multi-user.target 
+
+*sudo systemctl isolate multi-user.target *
 
 Now you can do the Dup
 
-sudo zypper dup
+*sudo zypper dup*
 
 Now if all worked out well you can just reboot and see if it worked.  Otherwise as some backup steps continue below.
 
@@ -50,7 +54,7 @@ Now if all worked out well you can just reboot and see if it worked.  Otherwise 
 
 Lets make sure the kernel images have been set up.
 
-sudo mkinitrd
+*sudo mkinitrd*
 
 Now reinstall Grub manualy unless you are on EFI.  I have another guide on Grub reinstallation but the commands are as follows presuming /dev/sda is your main boot drive where / /boot are installed.
 
@@ -60,6 +64,7 @@ Now reinstall Grub manualy unless you are on EFI.  I have another guide on Grub 
 
 Now you should be set to reboot.  
 
+If you are running intel graphics or AMD graphics (without AMDGPU-Pro) then you should be good.  
 
 Drivers:Nvidia
 
@@ -76,7 +81,7 @@ We need to add a 3 to that to boot to a TTY with networking enabled.  If things 
 
 Example using the above as a default basis.
 
-*net.ifnames=0 resume=/dev/disk/by-uuid/fe92bee9-2db5-44fd-85c3-335d1c4ce367 splash=verbose plymouth.enable=0 showopts 3*
+>*net.ifnames=0 resume=/dev/disk/by-uuid/fe92bee9-2db5-44fd-85c3-335d1c4ce367 splash=verbose plymouth.enable=0 showopts 3*
 
 Now hit CTRL-X or F10 to boot (should say something about continuing)
 
@@ -84,17 +89,19 @@ Now Login as root if you can or log in as yourself.  The following command is if
 
 Change Directories to where the NVIDIA.Run file you downloaded is located.  in my case i always keep it in the bin directory of my home.
 
-cd /home/mirppc/bin
+*cd /home/mirppc/bin*
 
 Now we need to execute the run file.  I reccomend using the -e flag to get as many options as possible.  Linked in the video section will be a tutorial on guiding you through the Nvidia install process. Make sure you have DKMS installed and the kernel headers and sources.
 
-sh ./NVIDIA*.run -e
+*sh ./NVIDIA*.run -e*
 
 Follow the instructions and once that is complete you can do one of two things...
 
-rcxdm restart
+*rcxdm restart*
+
 or
-systemctl reboot
+
+*systemctl reboot*
 
 And now if all went well you should have a working system that has been migrated to Opensuse Leap 15.2.
 
@@ -111,13 +118,6 @@ If you liked this please help me buy a cup of tea or some food via Librepay or v
 
 
 <noscript><a href="https://liberapay.com/Mir/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button9D5J99QNAN88W" />
-<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9D5J99QNAN88W)
 
