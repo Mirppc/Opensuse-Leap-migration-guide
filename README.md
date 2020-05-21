@@ -22,7 +22,7 @@ Then we need to change the existing repos to 15.2.
 
 Now we need to refresh the repositories to see if there have been any that had name changes or no longer exist.  This is time consuming but must be done if you have lots of packages from multiple repos.  Quick and easy way is to turn off all but the OSS, Non-OSS, Update and Packman repo (see mentioned video)
 
-Sudo zypper --gpg-auto-import-keys ref
+sudo zypper --gpg-auto-import-keys ref
 
 Any issues with the above command, make note of the url and open the url in a web browser.  An example of a troublesome one is XFCE having changed it's repo naming scheme in 15.1 verses 15.0 with 15.1 going back to a normal naming scheme.  Some repos also may not be yet built for 15.2 or have been abandoned.  You can manage any of the repo's that need the url changed or need to be deleted using Yast>Software Repositories.  If there is something you need you can make an OpenBuildService account, clone the repo you need and try to build the packages targeting Leap 15.2.
 
@@ -114,9 +114,12 @@ If you liked this please help me buy a cup of tea or some food via Librepay or v
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="9D5J99QNAN88W" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<input type="hidden" name="hosted_button_id" value="" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button9D5J99QNAN88W" />
 <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 </form>
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9D5J99QNAN88W)
+
 
 https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9D5J99QNAN88W&source=url
