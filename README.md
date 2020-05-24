@@ -28,7 +28,7 @@ Any issues with the above command, make note of the url and open the url in a we
 
 Now that you have your repos all set up, fixed, and updated we will need to do a distro upgrade with downloading the packages only first.  This will download all the packages  needed for a succesful upgrade, if something times out or errors out you can reissue the command with no ill effect as nothing has been changed yet.  **WARNING** Make sure you have enough space in / for the caching of the packages, otherwise this will not work out as both an error log if something goes wrong and the size of cached packages could exceed the default / size set up by older Opensuse installs (using the automated partition setup).
 
-sudo zypper dup --download-only
+*sudo zypper dup --download-only*
 
 Now once you have all the packages cached it is reccomended you drop into a TTY using **ALT-CTRL-F#** with # being 1-4 being the ones i reccomend so *ALT-CTRL-F2* is the one I would choose.  This step was omitted in the video due to issues with capturing the TTY over HDMI.
 
