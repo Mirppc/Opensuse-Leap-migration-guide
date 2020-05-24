@@ -42,7 +42,7 @@ or
 
 or 
 
-*sudo systemctl isolate multi-user.target *
+*sudo systemctl isolate multi-user.target*
 
 Now you can do the Dup
 
