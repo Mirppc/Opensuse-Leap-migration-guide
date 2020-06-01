@@ -112,7 +112,12 @@ Nvidia Install Video Guide https://youtu.be/kytT_ucujjg
 
 Grub Recovery Guide https://youtu.be/QbZmCo1weLo
 
-**Comming Soon** Leap 42.1 to 15.2
+Leap 42.1 to 15.2 Migration Videos
+    Part 1 the Setup, preperation and package download
+    https://www.youtube.com/watch?v=9c_M7itDSeU
+    
+    Part 2 The execution and post migration cleanup
+    https://www.youtube.com/watch?v=bS_kk9pkAkw
 
 If you liked this please help me buy a cup of tea or some food via Librepay or via Paypal.
 
