@@ -19,6 +19,9 @@ Then we need to change the existing repos to 15.2.
         sudo sed -i 's/15.0/15.2/g' /etc/zypp/repos.d/*.repo
     From 15.1
         sudo sed -i 's/15.1/15.2/g' /etc/zypp/repos.d/*.repo
+    From 15.x if raw url is $releasever
+        sudo sed -i 's/$releasever/15.2/g' /etc/zypp/repos.d/*.repo
+
 
 Now we need to refresh the repositories to see if there have been any that had name changes or no longer exist.  This is time consuming but must be done if you have lots of packages from multiple repos.  Quick and easy way is to turn off all but the OSS, Non-OSS, Update and Packman repo (see mentioned video)
 
