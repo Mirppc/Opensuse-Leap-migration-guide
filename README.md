@@ -1,4 +1,4 @@
-This is suppose to be a guide on how to do an in-place upgrade of Opensuse to Opensuse Leap 15.2 with minimal issues.
+This is suppose to be a guide on how to do an in-place upgrade of Opensuse to Opensuse Leap with minimal issues.
 
 Tested from 42.1 to 15.2 Beta with minimal issues.  See linked youtube series in the video section.
 
@@ -10,24 +10,26 @@ First back up your repos
 Then we need to change the existing repos to 15.2.  
 
     From 42.1
-        sudo sed -i 's/42.1/15.2/g' /etc/zypp/repos.d/*.repo
+        sudo sed -i 's/42.1/15.3/g' /etc/zypp/repos.d/*.repo
     From 42.2
-        sudo sed -i 's/42.2/15.2/g' /etc/zypp/repos.d/*.repo
+        sudo sed -i 's/42.2/15.3/g' /etc/zypp/repos.d/*.repo
     From 42.3
-        sudo sed -i 's/42.3/15.2/g' /etc/zypp/repos.d/*.repo
+        sudo sed -i 's/42.3/15.3/g' /etc/zypp/repos.d/*.repo
     From 15.0
-        sudo sed -i 's/15.0/15.2/g' /etc/zypp/repos.d/*.repo
+        sudo sed -i 's/15.0/15.3/g' /etc/zypp/repos.d/*.repo
     From 15.1
-        sudo sed -i 's/15.1/15.2/g' /etc/zypp/repos.d/*.repo
+        sudo sed -i 's/15.1/15.3/g' /etc/zypp/repos.d/*.repo
+    From 15.2
+        sudo sed -i 's/15.1/15.3/g' /etc/zypp/repos.d/*.repo
     From 15.x if raw url is $releasever
-        sudo sed -i 's/$releasever/15.2/g' /etc/zypp/repos.d/*.repo
+        sudo sed -i 's/$releasever/15.3/g' /etc/zypp/repos.d/*.repo *updated instructions using $releasever comming soon*
 
 
 Now we need to refresh the repositories to see if there have been any that had name changes or no longer exist.  This is time consuming but must be done if you have lots of packages from multiple repos.  Quick and easy way is to turn off all but the OSS, Non-OSS, Update and Packman repo (see mentioned video)
 
 *sudo zypper --gpg-auto-import-keys ref*
 
-Any issues with the above command, make note of the url and open the url in a web browser.  An example of a troublesome one is XFCE having changed it's repo naming scheme in 15.1 verses 15.0 with 15.1 going back to a normal naming scheme.  Some repos also may not be yet built for 15.2 or have been abandoned.  You can manage any of the repo's that need the url changed or need to be deleted using Yast>Software Repositories.  If there is something you need you can make an OpenBuildService account, clone the repo you need and try to build the packages targeting Leap 15.2.
+Any issues with the above command, make note of the url and open the url in a web browser.  An example of a troublesome one is XFCE having changed it's repo naming scheme in 15.1 verses 15.0 with 15.1 going back to a normal naming scheme.  Some repos also may not be yet built for the current version of leap or have been abandoned.  You can manage any of the repo's that need the url changed or need to be deleted using Yast>Software Repositories.  If there is something you need you can make an OpenBuildService account, clone the repo you need and try to build the packages targeting the current version of Leap.
 
 Now that you have your repos all set up, fixed, and updated we will need to do a distro upgrade with downloading the packages only first.  This will download all the packages  needed for a succesful upgrade, if something times out or errors out you can reissue the command with no ill effect as nothing has been changed yet.  **WARNING** Make sure you have enough space in / for the caching of the packages, otherwise this will not work out as both an error log if something goes wrong and the size of cached packages could exceed the default / size set up by older Opensuse installs (using the automated partition setup).
 
