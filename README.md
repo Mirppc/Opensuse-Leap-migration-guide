@@ -7,7 +7,7 @@ First back up your repos
 
 *sudo cp -Rv /etc/zypp/repos.d /etc/zypp/repos.d.Old*
 
-Then we need to change the existing repos to 15.2.  
+Then we need to change the existing repos to 15.3.  
 
     From 42.1
         sudo sed -i 's/42.1/15.3/g' /etc/zypp/repos.d/*.repo
